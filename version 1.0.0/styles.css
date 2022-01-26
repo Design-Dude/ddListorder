@@ -1,0 +1,26 @@
+table.listorder .listorder-icon {
+    display: inine-block;
+    width: 22px;
+    height: 18px;
+    background-color: transparent;
+    margin-left: 10px;
+    color: lightgrey;
+    cursor: default;
+    opacity: 0.2;
+    background-image: repeating-linear-gradient(black, black 2px, transparent 2px, transparent 8px, black 8px, black 10px, transparent 10px, transparent 16px, black 16px, black 18px);
+}
+
+table.listorder.listorder-enabled .listorder-icon {
+    color: green;
+    cursor: ns-resize;
+    opacity: 1;
+}
+
+table.listorder .listorder_clone {
+    pointer-events: none;
+}
+
+table.listorder .listorder_clone td {
+    background-color: #f0f0f0;
+    vertical-align: middle;
+}
