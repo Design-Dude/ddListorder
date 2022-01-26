@@ -25,9 +25,19 @@ Or link ```ddListorder``` from design-dude.nl. This will always be the latest ve
 ```ddListorder.init(options=json);```
 Call ```ddListorder``` and provide the necessary options for the table.
 
+## Properties
+After initialisation the following information properties will be available.
+```
+ddListorder.init();
+ddListorder.version; // version
+ddListorder.info; // meta information
+```
+
 ## Options properties
 #### table
 #### data
 #### change
 #### returnType
 #### enable
+
+## Example
