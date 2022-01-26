@@ -22,6 +22,12 @@ Or link ```ddListorder``` from design-dude.nl. This will always be the latest ve
 ```
 
 ## Constructor
-```var my_color = new ddListorder.init(options=json);```
+```ddListorder.init(options=json);```
 Call ```ddListorder``` and provide the necessary options for the table.
-```
+
+## Options properties
+#### table
+#### data
+#### change
+#### returnType
+#### enable
