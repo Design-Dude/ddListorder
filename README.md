@@ -12,7 +12,7 @@ Initiate ```ddListorder``` with any given table and all selected rows can be reo
 ```jQuery```
 
 ## Installation
-Download the latest version ```ddListorder.js``` or ```ddBasecolor.min.js``` and include the file in your project.
+Download the latest version ```ddListorder.js``` or ```ddListorder.min.js``` and include the file in your project.
 ```
 <script type='text/javascript' src='ddListorder.1.0.0.min.js'></script>
 ```
