@@ -96,7 +96,7 @@ returnArray: true
 - The default is ```false```, which will return a ```json``` object.
 
 #### enable
-The rows of the defined ```table:``` are dragable by default. You can disable drag & drop if the columns are not sorted by ascending order in the given ```enable.column:```. ```enable:``` is optional.
+The rows of the defined ```table:``` are dragable by default. Use ```enable``` to disable drag & drop if the columns are not sorted by ascending order in the given ```column:```.
 ```
 enable: {
     attr: "class",
@@ -106,11 +106,11 @@ enable: {
     column: 1
 },
 ```
-- Sets the row attribute ```attr:``` where the sort indication can be found.
+- Set the row attribute ```attr:``` where the sort indication can be found.
 - Disabled drag & drop if ```enable:``` is found in ```attr:``` of any column other than ```column:```
 - Disabled drag & drop if the ```disable:``` is found in any ```attr:```.
-- Use ```head:``` if the columns are not in the ```thead```. Default is ```"thead>tr>th"```.
-- Use ```column:``` the column to set the correct order column. Default is ```0```, drag & drop enabled.
+- Use ```head:``` if the table header columns are not in the ```thead```. Default is ```"thead>tr>th"```.
+- Use ```column:``` to set the correct order column. Default is ```0```, which always enables drag & drop.
 
 #### rowDrag
 By default rows can only be dragged by their drag icon. Set ```rowDrag``` to make the entire row dragable. Be sure there are no clickable items in the row.
