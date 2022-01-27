@@ -86,10 +86,10 @@ table: "my_table_id"
 ```
 - All changes are stored in ```data:```, in the new order.
 - ```logic:``` is only available in ```singleDrag: true``` mode. Use ```from:``` and ```to:``` to move ```id:``` and ```shift:``` all rows in between.
-- If ```returnArray: true```, you just get an ```Array``` in the new order.
-- 
+- If ```returnArray: true```, you just get an ```Array``` in the new order instead of a ```json``` object.
+
 #### returnArray
-Change the ```return_obj``` in the ```change``` function.
+Change the ```return_obj``` in the ```change``` function to a simple ```Array```.
 ```
 returnArray: true
 ```
