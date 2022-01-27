@@ -39,10 +39,10 @@ Table definition.
 table: "my_table_id"
 table: { id: "my_table_id" }
 ```
-• The tabledefinition is optional.
-• Without '''table:''' option there must be a ```data.rows``` array with unique row id's.
-• If there is a table found without id attribute, using row id's from ```data.rows```, the table will get an automated id like ```id="listorder_"+instance counter```
-• The key ```id:``` may be any table attribute from the DOM where the table_id is located. For instance ```table: data-id:"my_table_id"``` will look for ```data-id="my_table_id"```
+- The tabledefinition is optional.
+- Without '''table:''' option there must be a ```data.rows``` array with unique row id's.
+- If there is a table found without id attribute, using row id's from ```data.rows```, the table will get an automated id like ```id="listorder_"+instance counter```
+- The key ```id:``` may be any table attribute from the DOM where the table_id is located. For instance ```table: data-id:"my_table_id"``` will look for ```data-id="my_table_id"```
 
 #### data
 #### change
