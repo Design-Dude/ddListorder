@@ -34,7 +34,7 @@ ddListorder.info; // meta information
 
 ## Options properties
 #### table
-Table definition.
+Specify the table by passing a table ID as string or object.
 ```
 table: "my_table_id"
 table: { id: "my_table_id" }
