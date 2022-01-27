@@ -6,7 +6,6 @@ Initiate ```ddListorder``` with any given table and all selected rows can be reo
 
 ## On the  whislist
 - The current version does not yet work on touch devices.
-- Updating a database usig ajax and the 'logic' return object does not yet update the internal structure. You now need a pageload first. The idea is that a function should trigger the internal structure update after a succeeded ajax call.
 
 ## Dependencies
 ```jQuery```
@@ -35,9 +34,23 @@ ddListorder.info; // meta information
 
 ## Options properties
 #### table
+Table definition.
+```
+table: "my_table_id"
+table: { id: "my_table_id" }
+```
+• The tabledefinition is optional.
+• Without '''table:''' option there must be a ```data.rows``` array with unique row id's.
+• If there is a table found without id attribute, using row id's from ```data.rows```, the table will get an automated id like ```id="listorder_"+instance counter```
+• The key ```id:``` may be any table attribute from the DOM where the table_id is located. For instance ```table: data-id:"my_table_id"``` will look for ```data-id="my_table_id"```
+
 #### data
 #### change
 #### returnType
 #### enable
+#### rowDrag
+#### singleDrag
+
+## Styling
 
 ## Example
