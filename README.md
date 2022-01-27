@@ -42,7 +42,7 @@ table: { id: "my_table_id" }
 - The table definition is optional.
 - Without the ```table:``` option there must be a ```data.rows``` array (see below) with unique row IDs to find the table.
 - If ```ddListorder``` finds a table using the row IDs of ```data.rows```, the table gets an automated ```id``` like ```id="listorder_" + instance counter ``` if it does not have its own id.
-- The key ```id:``` may be any table attribute from the DOM where the actual ID is located. For instance ```table: data-id:"my_table_id"``` will look for ```data-id="my_table_id"```
+- The key ```id:``` may be any table attribute from the DOM where the actual ID is located. For instance ```table: { data-id:"my_table_id" }``` will look for attribute ```data-id="my_table_id"```
 
 #### data
 #### change
