@@ -1,0 +1,84 @@
+Small and simple javascript library for manipulating row in a predefined table.
+
+Owner: Design Dude
+Developer: Mek van 't Hoff
+Year: 2022
+Contact: master.mek@design-dude.nl
+
+Dependencies: jQuery
+
+Source code: https://github.com/Design-Dude/ddListorder
+
+Initialize a table with ddListorder.init( {options} );
+
+	{options} is a json object with:
+
+		table: "table_id"|{id:"id"} 
+			- table: is optional
+			- without table: option there must be a data.rows array with unique row id's
+			- if there is a table found without id using row id's, it will get an automated id like "listorder_"+instance counter
+			- "table_id" - is the table id="table_id" as a string 
+			- id: - can be any table attribute from the DOM where the table_id is located (for instance data-id:"my_table_id")
+
+		data: {
+			attr: "attribute name",
+			body: "path to table rows",
+			regex: "pattern",
+			rows: [list with id's] (optional, only rows with corresponding id's from this list will be dragable)
+		}
+			- attr: is an optional attribute name where the unique row id is stored. It's default is "id"
+			- body: is an optional string of the path where the table rows can be found. It's default is "tbody>tr"
+			- regex: this optional pattern is used to look for matching strings from rows: in attr: or for matching patterns in attr: in every row of the table:, in case there's no rows: array provided
+			- rows: is a optional list with unique row id's. Oonly rows with corresponding id's from this list, accoring to regex, will be dragable
+
+		change: function( obj )
+			- change is a function that should handle the feedback on a drag change:
+			obj {
+				data: [{
+					id: "id", (record_id)
+					from: 1, (former position)
+					to: 1 (new position)
+				}, ...],
+				logic: {
+					id: "record_id",
+					from: 3,
+					to: 2,
+					shift: 1
+				},
+				table: "listorder_1"
+			}
+				- data: will appear in order of to: values (= new order)
+				- logic: can be used if a database should be updated after each drop with a page reload as a result (call ddListorder.wait() to prevent changes before the pageload is ready)
+				- logic: will only be present after the first drop because the class does not keep track of multiple drag & drops you must use the new order in the data: structure instead
+				- logic.id: should correspond to the a database record (unique row id)
+				- logic.from: is the old position
+				- logic.to: is the new position
+				- logic.shift: can be used to reposition all the records between logic.from: end logic.to:
+
+		enable: { (optional)
+			attr: "class",
+			enable: "sorted-asc", (drag and drop is enabled by default and disabled if enable is found in the wrong column)
+			disable: "sorted-asc", (drag and drop is enabled by default and disabled if disable is found in any column)
+			head: "thead>tr>th", (path to the columns to check for attr:enable, default "thead>tr>th")
+			column: 1 (the column to look for attr:enable, default 0 = always enabled)
+		}
+			- enable: is optional. Drag & drop is enabled by default. Use it to enable drag & drop only if the list is sorted ascending by order in the given enable.column:
+			- enable.attr: sets the attribute where the sort indication can be found
+			- enable.enable: disabled drag & drop if the enable.enable: string is found in enable.attr: of a column other than defined in enable.column:
+			- enable.disable: disabled drag & drop if the enable.disable: string is found in any enable.attr:
+			- enable.head: is an optional string of the path where the table columns can be found. It's default is "thead>tr>th"
+			- enable.column: the column (starts at column 1) where to look for enable.attr, default value is 0 = always enabled
+
+		rowDrag: false,
+			- true makes the entire row dragable
+			- false = default, makes a row dragable by the drag icon only
+
+        singleDrag: false
+			- true, the order will be recalculated after each drag. This is useful if you update your database via Ajax after each drag. The return object contains the full order list plus a logical key to calculate the new order for this single move.
+			- false = default, the return object will only contain the full order list with from: and to: for each row.
+
+Setter method:
+	wait(boolean = true)
+
+Versions:
+1.0.0 release Jan 26th, 2022
