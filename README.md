@@ -57,14 +57,14 @@ data: {
 data: {
     attr: "id",
     body: "tbody>tr",
-    regex: "[rows]",
+    regex: "my_table_id_[rows]",
     rows: ["row_id_1", "row_id_2", "row_id_3", "row_id_4", ... ]
 }
 ```
-- Use ```attr:``` if the row IDs are not stored in the row's ```id``` attribute. Default = ```"id"```.
-- Use ```body:``` if the rows are not in the ```tbody```. Default is ```"tbody>tr"```.
-- Use ```regex:``` to get the row ID as part of ```attr:``` if ```rows:``` is not defined.
-- Use ```regex:``` to test the row ID's are part of ```attr:```. ```[rows]``` is a placeholder for the individual IDs in ```rows:```.
+- Use ```attr:``` if the row IDs are stored in another attribute than ```id```, which is default.
+- Use ```body:``` if the rows are not in ```tbody>tr```, which is default.
+- Use ```regex:``` to get the row ID as a part of ```attr:``` if ```rows:``` is not defined.
+- Use ```regex:``` to test if the row ID's are part of ```attr:```. ```[rows]``` is a placeholder for the individual IDs in ```rows:```.
 
 #### change
 A function that should handle the feedback on a drag change.
