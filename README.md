@@ -13,7 +13,7 @@ Initiate ```ddListorder``` with any given table and all selected rows can be reo
 ## Installation
 Download the latest version ```ddListorder.js``` or ```ddListorder.min.js``` and include the file in your project.
 ```
-<script type='text/javascript' src='ddListorder.1.0.0.min.js'></script>
+<script type='text/javascript' src='ddListorder.min.js'></script>
 ```
 Or link ```ddListorder``` from design-dude.nl. This will always be the latest version.
 ```
