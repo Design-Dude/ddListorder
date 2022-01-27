@@ -123,8 +123,16 @@ By default drag & drops are stacked. The return_object returns the initial posit
 singleDrag: true
 ```
 
+## Setter method
+There is only a single setter for this class. You can use this function in ```singleDrag``` mode. It prevents the user to drag & drop while you update your database for example. Don't forget to enable drag & drop on ```success``` width ```wait(false)```.
+```
+ddListorder.wait();
+
+ddListorder.wait(false);
+```
+
 ## Styling
-There's no styling for the drag & drop. However you can use some classes to make your own.
+There's no styling for the drag & drop. However you can use some classes to make your own. Here is a simple example.
 ```
 table.listorder .listorder-icon {
     position: relative;
@@ -159,6 +167,45 @@ table.listorder .listorder_clone td {
 }
 table.listorder.listorder-dragrow tr {
     cursor: ns-resize;
+}
+```
+Or in ```Less``` format:
+```
+table.listorder
+    .listorder-icon {
+        position: relative;
+        display: inline-block;
+        width: 32px;
+        height: 44px;
+        margin: auto;
+        background-color: #f0f0f0;
+        opacity: 0.2;
+        cursor: default;
+        &:before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 22px;
+            height: 18px;
+            margin-left: 5px;
+            margin-top: 13px;
+            background-image: repeating-linear-gradient(black, black 2px, transparent 2px, transparent 8px, black 8px, black 10px, transparent 10px, transparent 16px, black 16px, black 18px);
+        }
+    }
+    &.listorder-enabled .listorder-icon {
+        opacity: 1;
+        cursor: ns-resize;
+    }
+    .listorder_clone {
+        pointer-events: none;
+        td {
+            position: relative;
+            background-color: #f0f0f0;
+        }
+    }
+    .listorder-dragrow tr {
+        cursor: ns-resize;
+    }
 }
 ```
 
