@@ -43,7 +43,7 @@ table: { id: "my_table_id" }
 - The key ```id:``` may be any table attribute from the DOM where the actual ID is located. For instance ```table: { data-id:"my_table_id" }``` will look for attribute ```data-id="my_table_id"```.
 
 #### data
-Pass the list of row IDs or tell ```ddListorder``` where to find them in the specified table.
+Pass the list of row IDs or tell ```ddListorder``` where to find them in the specified table. Without ```rows:``` you must specifiy ```table:```.
 ```
 data: {
     rows: ["row_id_1", ... ]
@@ -61,7 +61,6 @@ data: {
     rows: ["row_id_1", "row_id_2", "row_id_3", "row_id_4", ... ]
 }
 ```
-- Without ```rows:``` you must specifiy ```table:```
 - Use ```attr:``` if the row IDs are not stored in the row's id attribute. Default = ```"id"```.
 - Use ```body:``` if the rows are not in the ```tbody```. Default is ```"tbody>tr"```.
 - Use ```regex:``` to get the row ID as part of ```attr:``` if ```rows:``` is not defined.
