@@ -27,7 +27,6 @@ Call ```ddListorder``` and provide the necessary options for the table.
 ## Properties
 After initialisation the following information properties will be available.
 ```
-ddListorder.init();
 ddListorder.version; // version
 ddListorder.info; // meta information
 ```
@@ -41,10 +40,20 @@ table: { id: "my_table_id" }
 ```
 - The table definition is optional.
 - Without the ```table:``` option there must be a ```data.rows``` array (see below) with unique row IDs to find the table.
-- If ```ddListorder``` finds a table using the row IDs of ```data.rows```, the table gets an automated ```id``` like ```id="listorder_" + instance counter ``` if it does not have its own id.
+- If ```ddListorder``` finds a table using the row IDs of ```data.rows```, the table gets an automated ID like ```id="listorder_" + instance counter ``` if it does not have its own id.
 - The key ```id:``` may be any table attribute from the DOM where the actual ID is located. For instance ```table: { data-id:"my_table_id" }``` will look for attribute ```data-id="my_table_id"```
 
 #### data
+Pass the list of row IDs or tell ```ddListorder``` where to find them in the specified table.
+```
+data: {
+    attr: "attribute name",
+    body: "path to table rows",
+    regex: "pattern",
+    rows: [list with id's]
+}
+```
+
 #### change
 #### returnType
 #### enable
