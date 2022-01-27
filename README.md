@@ -199,7 +199,6 @@ table.listorder
     .listorder_clone {
         pointer-events: none;
         td {
-            position: relative;
             background-color: #f0f0f0;
         }
     }
@@ -210,3 +209,29 @@ table.listorder
 ```
 
 ## Example
+A full example. See ```demo.html```.
+```
+ddListorder.init(
+    {
+        table: "my_table_id",
+        data: {
+            attr: "onclick",
+            regex: "pnl42_dg65_([a-z0-9_]+)\""
+        },
+        change: my_function,
+        enable: {
+            attr: "class",
+            enable: "sorted-asc",
+            disable: "sorted-desc",
+            head: "thead>tr>th",
+            column: 1
+        },
+        rowDrag: true,
+        singleDrag: false
+    }
+);
+function my_function(obj) {
+    console.log(obj);
+    // do something with the new order from obj here!
+}
+```
