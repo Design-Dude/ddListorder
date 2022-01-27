@@ -61,7 +61,7 @@ data: {
     rows: ["row_id_1", "row_id_2", "row_id_3", "row_id_4", ... ]
 }
 ```
-- Use ```attr:``` if the row IDs are not stored in the row's id attribute. Default = ```"id"```.
+- Use ```attr:``` if the row IDs are not stored in the row's ```id``` attribute. Default = ```"id"```.
 - Use ```body:``` if the rows are not in the ```tbody```. Default is ```"tbody>tr"```.
 - Use ```regex:``` to get the row ID as part of ```attr:``` if ```rows:``` is not defined.
 - Use ```regex:``` to test the row ID's are part of ```attr:```. ```[rows]``` is a placeholder for the individual IDs in ```rows:```.
