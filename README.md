@@ -124,7 +124,7 @@ By default drag & drops are stacked. The return_object returns the initial posit
 singleDrag: true
 ```
 
-#### animation
+#### animation (new since 1.1.0)
 By default the dragable row will animate to its final place in 100ms. Use ```animation``` to set a new duration in milliseconds. ```animation: 0``` disables the animation.
 ```
 animation: 200
