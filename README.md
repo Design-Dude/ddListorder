@@ -1,7 +1,6 @@
 # Listorder
-Small and simple javascript library for manipulating row in a predefined table.
+Small and simple javascript library for manipulating rows in a predefined table on desktop and mobile devices.
 
-## The story
 Initiate ```ddListorder``` with any given table and all selected rows can be reordered by drag & drop. Pass a return function and handle the drop change at your will, updating internal arrays, input fileds or a database.
 
 ## On the  whislist (known issue)
@@ -126,7 +125,7 @@ singleDrag: true
 ```
 
 #### animation
-By default the dragable row will animate to its final place in 200ms. You can change the time with ```animation```. Set ```animation: 0``` disables the animation.
+By default the dragable row will animate to its final place in 100ms. Use ```animation``` to set a new duration in milliseconds. ```animation: 0``` disables the animation.
 ```
 animation: 200
 ```
@@ -167,7 +166,7 @@ table.listorder.listorder-enabled .listorder-icon {
     cursor: ns-resize;
 }
 table.listorder .listorder_clone {
-    pointer-events: none;
+    z-index: 1;
 }
 table.listorder .listorder_clone td {
     position: relative;
@@ -205,7 +204,7 @@ table.listorder
         cursor: ns-resize;
     }
     .listorder_clone {
-        pointer-events: none;
+        z-index: 1;
         td {
             background-color: #f0f0f0;
         }
