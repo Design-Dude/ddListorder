@@ -5,7 +5,8 @@ Small and simple javascript library for manipulating row in a predefined table.
 Initiate ```ddListorder``` with any given table and all selected rows can be reordered by drag & drop. Pass a return function and handle the drop change at your will, updating internal arrays, input fileds or a database.
 
 ## On the  whislist (known issue)
-- The current version does not yet work on touch devices.
+- Move only over y axis (within table)
+- Drag any item to any dropzone (perhaps different class)
 
 ## Dependencies
 ```jQuery```
@@ -117,10 +118,17 @@ By default rows can only be dragged by their drag icon. Set ```rowDrag``` to mak
 ```
 rowDrag: true
 ```
+
 #### singleDrag
 By default drag & drops are stacked. The return_object returns the initial position ```from:``` and the new position ```to:``` for each row ID. Set ```singleDrag``` to reset the order after each drop. Use this setting if your ```change``` script updates your database immediately. ```logic:``` becomes available in the ```return_object```. You can use ```logic:``` ```from:``` and ```to:``` to move ```id:``` and ```shift:``` all rows in between.
 ```
 singleDrag: true
+```
+
+#### animation
+By default the dragable row will animate to its final place in 200ms. You can change the time with ```animation```. Set ```animation: 0``` disables the animation.
+```
+animation: 200
 ```
 
 ## Setter method
