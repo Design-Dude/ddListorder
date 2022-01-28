@@ -131,7 +131,7 @@ animation: 200
 ```
 
 ## Setter method
-There is only a single setter for this class. You can use this function in ```singleDrag``` mode. It prevents the user to drag & drop while you update your database for example. Don't forget to enable drag & drop on ```success``` width ```wait(false)```.
+There is only a single setter for this class. You can use this function in ```singleDrag``` mode. It prevents the user to drag & drop while you update your database for example. Don't forget to enable drag & drop on ```success``` with ```wait(false)```.
 ```
 ddListorder.wait();
 
