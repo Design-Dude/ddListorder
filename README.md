@@ -126,7 +126,7 @@ By default drag & drops are stacked. The return_object returns the initial posit
 singleDrag: true
 ```
 
-#### remove
+#### remove (new since 1.2.0)
 With ```remove``` rows can be removed by dropping them outside the boundaries of the table. An additinal Array ```removed``` with row IDs will be added to the ```return_object``` depending on the ```singeDrag``` and ```returnArray``` status. The ```logic``` property will pass ```to: 0``` for any removed row.
 ```
 remove: true
@@ -149,7 +149,7 @@ ddListorder.wait();
 ddListorder.wait(false);
 ```
 
-#### remove(object|ID)
+#### remove(object|ID) (new since 1.2.0)
 You can remove rows by dragging them outside the boundaries of the table if ```remove: true``` is passed during initialisation. If not, rows can still be removed with this ```remove()``` method. You can pass an ID (string) or an object (the row or any object within the row).
 ```
 ddListorder.remove("my_row_id");
